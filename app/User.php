@@ -15,8 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+     /**
+      * 2021.5.18 emailをlogin_idに変更
+     */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'login_id', 'password',
     ];
     
 
@@ -34,8 +37,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+     /**2021.5.18 'email_verified_at'→login_id_verified_at'に変更
+     */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'login_id_verified_at' => 'datetime',
     ];
     
     

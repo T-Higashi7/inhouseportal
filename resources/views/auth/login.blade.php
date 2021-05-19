@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+{{--2021.5.18 emailではなくログインIDとパスワードで認証したいため、emailをlogin_idに変更--}}
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,12 +14,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="login_id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="login_id" type="login_id" class="form-control @error('login_id') is-invalid @enderror" name="login_id" value="{{ old('login_id') }}" required autocomplete="login_id" autofocus>
 
-                                @error('email')
+                                @error('login_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
